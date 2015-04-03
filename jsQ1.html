@@ -1,0 +1,38 @@
+
+
+<html>
+<head>
+<title>JavaScript Form - Input Text Field</title>
+</head>
+<body>
+	<h2>
+		Enter something into the field and press the button. <br> Please
+		try this a few times.
+	</h2>
+	<p>
+		Enter your First Name: <input type="text" id="inp"><br>
+		<br> <input type="Button" Value="Show and Clear Input"
+			id="submit">
+		<script>
+document.getElementById("submit").addEventListener("click", function(){
+ 
+		var field = document.querySelector("input").value;
+		
+		if (field.indexOf("A") >= 0)
+			alert("Oops! U cannot type A ");
+		else if (field.indexOf("C") >= 0)
+			alert("Oops! U cannot type C ");
+		else if (field.indexOf("N") >= 0)
+			alert("Oops! U cannot type N ");
+		else if (field.indexOf("U") >= 0)
+			alert("Oops! U cannot type U ");
+		else if (field.indexOf("O") >= 0)
+			alert("Oops! U cannot type O ");
+		var val = document.getElementById("inp");
+		val.value = "";
+});
+
+</script>
+	</p>
+</body>
+</html>
