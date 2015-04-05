@@ -12,24 +12,26 @@ div.movable {
 </style>
 </head>
 <body>
-	Â 
-	<div id="sq" onclick="moveImage()" class="movable"></div><script language="javascript">
-		var x = 5; 
-		var y = 5; 
-		var dest_x = window.innerWidth; 
+	 
+	<div id="sq" onclick="moveImage()" class="movable"></div>
+	<script>
+		var x = 5;
+		var y = 5;
+		var dest_x = window.innerWidth;
 		var dest_y = window.innerHeight;
-		var interval = 5; 
+		var interval_x = 8;
+		var interval_y = 4;
 		function moveImage() {
 			if (x < dest_x)
-				x = x + interval;
+				x = x + interval_x;
 			if (y < dest_y)
-				y = y + interval;
+				y = y + interval_y;
 
 			//Move the image to the new location
 			document.getElementById("sq").style.left = x + 'px';
 			document.getElementById("sq").style.top = y + 'px';
 
-			if ((x + interval < dest_x) && (y + interval < dest_y)) {
+			if ((x + interval_x < dest_x) && (y + interval_y < dest_y)) {
 				requestAnimationFrame(moveImage);
 			}
 		}
@@ -38,7 +40,7 @@ div.movable {
 				|| window.mozRequestAnimationFrame
 				|| window.msRequestAnimationFrame
 				|| window.oRequestAnimationFrame || function(callback) {
-					return setTimeout(callback, 5);
+					return setTimeout(callback, 50);
 				};
 	</script>
 </body>
